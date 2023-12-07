@@ -1,0 +1,55 @@
+html,
+body,
+.Navbar {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: linear-gradient(
+    #a0d2eb,
+    #e5eaf5,
+    #d0bdf4,
+    #8458b3,
+    #a28089
+  );
+  background-size: cover;
+}
+.navbar {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+.card {
+  display: flex;
+  width: 20vw;
+  margin-top: 5vh;
+  align-self: center;
+  margin-left: 40vw;
+}
+.summary-toggle {
+  cursor: pointer;
+  background-color: rgb(114, 114, 114);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.summary-toggle:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.summary {
+  overflow: hidden;
+  transition: max-height 1s ease-in;
+}
+
+.summary-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+
+.summary.show {
+  max-height: 500px;
+}
+
