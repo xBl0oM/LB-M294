@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithPopup } from 'firebase/auth';
 
 
 class SignIn extends Component {
@@ -23,12 +23,15 @@ class SignIn extends Component {
     signIn = (e) => {
         e.preventDefault();
         const { email, password } = this.state;
-        signInWithEmailAndPassword(getAuth, email, password)
+        signInWithPopup(getAuth, email, password)
             .then((userCredential) => {
                 console.log(userCredential);
             })
             .catch((error) => {
                 console.error(error);
+            })
+            .finally(() => {
+                this.props.onSignIn(); 
             });
     }
 

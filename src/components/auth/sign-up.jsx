@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import 'firebase/auth';
+
 
 
 class SignUp extends Component {
@@ -20,7 +22,7 @@ class SignUp extends Component {
         this.setState({ password: e.target.value });
     }
 
-    SignUp = (e) => {
+    signUp = (e) => {
         e.preventDefault();
         const { email, password } = this.state;
         createUserWithEmailAndPassword(getAuth, email, password)
@@ -37,7 +39,7 @@ class SignUp extends Component {
 
         return (
             <div className="sign-in-container">
-                <form onSubmit={(e) => this.SignUp(e)}>
+                <form onSubmit={(e) => this.signUp(e)}>
                     <h1>Create Account</h1>
                     <input type="email" placeholder="Enter your email" value={email} onChange={this.handleEmailChange} />
                     <input type="password" placeholder="Enter your password" value={password} onChange={this.handlePasswordChange} />
